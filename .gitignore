@@ -1,3 +1,4 @@
 node_modules
 .env
-src/assets
+src/assets/category
+src/assets/products
