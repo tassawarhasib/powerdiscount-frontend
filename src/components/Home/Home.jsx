@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 
 import "./Home.scss";
 
@@ -8,14 +8,17 @@ import Products from "../Products/Products";
 
 import { fetchDataFromApi } from "../../utils/api";
 import { Context } from "../../utils/context";
+import Shimmer from "../Shimmer/Shimmer";
 
 const Home = () => {
 
   const { categories, setCategories, products, setProducts } = useContext(Context);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getProducts();
-    getCategories();
+      getProducts();
+      getCategories();
+      setLoading(false);
   }, []);
 
   const getProducts = () => {
@@ -33,12 +36,23 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <div className="main-content">
-        <div className="layout">
-          <Category categories={categories} />
-          <Products products={products} headingText="Popular Products" />
+
+      {loading ? (
+        <div className="main-content">
+          <div className="layout">
+            {/* <h1>Loading.....</h1> */}
+            <Shimmer />
+          </div>
         </div>
-      </div>
+      ) : (
+
+        <div className="main-content">
+          <div className="layout">
+            <Category categories={categories} />
+            <Products products={products} headingText="Popular Products" />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,0 +1,40 @@
+@import "../../css-config/mixins.scss";
+
+.shimmer-shop-by-category {
+    margin: 25px 0;
+
+    @include md {
+        margin: 50px 0;
+    }
+
+    .shimmer-categories {
+        display: flex;
+        flex-flow: wrap;
+        gap: 10px;
+
+        .shimmer-category {
+            position: relative;
+            overflow: hidden;
+            width: calc(50% - 5px);
+            height: 150px;
+            background-color: #f0f0f0;
+            background-image: linear-gradient(to right,
+                    #f0f0f0 0%,
+                    #d0d0d0 50%,
+                    #f0f0f0 100%);
+            background-repeat: no-repeat;
+            background-size: 50% 100%;
+            animation: shimmer 0.7s infinite linear;
+
+            @include md {
+                width: calc(25% - 10px);
+            }
+        }
+    }
+
+    @keyframes shimmer {
+        100% {
+            background-position: 100% 0;
+        }
+    }
+}
