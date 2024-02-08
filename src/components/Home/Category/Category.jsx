@@ -1,8 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-
 import "./Category.scss";
-// import cat1 from "../../../assets/category/cat-1.jpg";
-// import { useEffect, useState } from "react";
 
 const Category = ({ categories }) => {
 
