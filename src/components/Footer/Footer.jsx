@@ -11,9 +11,7 @@ const Footer = () => {
         <div className="col">
           <div className="title">About</div>
           <div className="text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro,
-            ducimus! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Sequi, numquam!
+            We pick the best quality accessories for you. find your perfect match and elevate your experience today!
           </div>
         </div>
 
@@ -56,8 +54,8 @@ const Footer = () => {
       </div>
       <div className="bottom-bar">
         <div className="bottom-bar-content">
-            Power Discount 2023 CREATED BY Nzsoft.
-        <img src={Payment}/>
+          Power Discount &#169;2023 CREATED BY Tassawar Hasib
+          <img src={Payment} />
         </div>
       </div>
     </footer>
