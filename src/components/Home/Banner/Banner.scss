@@ -5,7 +5,6 @@
     position: relative;
     background-image: linear-gradient(to right, #8e2de2, #4a00e0);
 
-    // height: 500px;
     @include md {
         height: calc(100vh - 80px);
     }
@@ -14,12 +13,6 @@
         height: 100%;
         display: flex;
         justify-content: flex-end;
-        // flex-direction: column;
-        // margin: 0 auto;
-        // @include md{
-        //     flex-direction: row;
-        //     max-width: 1200px;
-        // }
         align-items: center;
         flex-direction: column-reverse;
         max-width: calc(100% - 20px);
@@ -33,7 +26,7 @@
 
         .banner-img {
             position: relative;
-            z-index: 9;
+            z-index: 1;
             width: 200px;
             margin-bottom: 20px;
 
@@ -42,12 +35,15 @@
                 margin-right: 60px;
                 margin-top: 50px;
                 margin-bottom: 0;
+                opacity: 0.7;
+
             }
 
-            @include xxl{
-                width: 600px;
+            @include xxl {
+                width: 500px;
                 margin-right: 0px;
                 margin-top: 0px;
+                opacity: 0.7;
             }
         }
 
@@ -57,6 +53,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            z-index: 2;
 
             @include md {
                 position: absolute;
