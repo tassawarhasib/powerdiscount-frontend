@@ -16,9 +16,8 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-      getProducts();
-      getCategories();
-      setLoading(false);
+    getCategories();
+    getProducts();
   }, []);
 
   const getProducts = () => {
@@ -30,6 +29,7 @@ const Home = () => {
   const getCategories = () => {
     fetchDataFromApi("/api/categories?populate=*").then((res) => {
       setCategories(res.data);
+      setLoading(false);
     });
   };
 
@@ -40,7 +40,6 @@ const Home = () => {
       {loading ? (
         <div className="main-content">
           <div className="layout">
-            {/* <h1>Loading.....</h1> */}
             <Shimmer />
           </div>
         </div>
